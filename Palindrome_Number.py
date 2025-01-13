@@ -60,6 +60,3 @@ class Solution:
             div /= 100
         return True
         
-
-sol = Solution()
-print(sol.isPalindrome(121))
