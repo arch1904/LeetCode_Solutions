@@ -48,4 +48,15 @@ Constraints:
 '''
 class Solution:
     def removeDuplicates(self, nums: List[int]) -> int:
-        pass
+        x = sorted(list(set(nums)))
+        for i in range(len(x)):
+            nums[i] = x[i]
+        return len(x)
+    #Solution without using sets
+    def removeDuplicates(self, nums: List[int]) -> int:
+        i = 0
+        for j in range(1,len(nums)):
+            if nums[i] != nums[j]:
+                i += 1
+                nums[i] = nums[j]
+        return i + 1
