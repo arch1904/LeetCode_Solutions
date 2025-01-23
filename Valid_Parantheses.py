@@ -44,4 +44,17 @@ Constraints:
 '''
 class Solution:
     def isValid(self, s: str) -> bool:
-        pass
+        stack = []
+        matching = {'(':')', '[':']', '{':'}'}
+        open_chars = matching.keys()
+        close_chars = matching.values()
+        for c in s:
+            if c in open_chars:
+                stack.append(c)
+            elif c in close_chars:
+                if not stack:
+                    return False
+                x = stack.pop()
+                if matching[x] != c:
+                    return False
+        return not stack

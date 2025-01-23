@@ -32,22 +32,22 @@ Constraints:
 
 '''
 # Definition for singly-linked list.
-# class ListNode:
-#     def __init__(self, val=0, next=None):
-#         self.val = val
-#         self.next = next
+class ListNode:
+    def __init__(self, val=0, next=None):
+        self.val = val
+        self.next = next
 class Solution:
     def addTwoNumbers(self, l1: Optional[ListNode], l2: Optional[ListNode]) -> Optional[ListNode]:
         x = 0
         m = 0
         while l1 != None:
-            x = x + l1.val * (10**m)
+            x += l1.val * (10**m)
             l1 = l1.next
             m += 1
         y = 0
         m = 0
         while l2 != None:
-            y = y +l2.val *(10**m)
+            y += l2.val * (10**m)
             l2 = l2.next
             m += 1
         z = x + y
